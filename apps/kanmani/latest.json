@@ -1,9 +1,0 @@
-{
-  "app": "Kanmani",
-  "version": "1.0.0",
-  "date": "2026-10-05",
-  "platform": "windows-x64",
-  "url": "https://github.com/SynK-Soft/synk-free-apps/releases/download/kanmani-v1.0.0/Kanmani-1.0.0-win-x64.exe",
-  "sha256": "PASTE_SHA256_HERE",
-  "notes": "https://github.com/SynK-Soft/synk-free-apps/blob/main/apps/kanmani/CHANGELOG.md"
-}
