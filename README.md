@@ -1,156 +1,273 @@
 <p align="center">
-  <img src="assets/kanmani-logo.png" alt="Kanmani logo" width="700">
+  <img src="assets/kanmani-logo.png" alt="Kanmani logo" width="480">
 </p>
 
-# Kanmani
+<h1 align="center">Kanmani — Type Manglish, Get Malayalam Everywhere</h1>
 
 <p align="center">
-  <a href="https://github.com/SynK-Soft/Kanmani/raw/refs/heads/main/Versions/1_0_0/Kanmani.exe"><b>Download Kanmani v1.0.0 (Windows EXE)</b></a>
+  Malayalam system-wide transliteration for Windows.<br>
+  Type in English letters in <b>any app</b> and get Malayalam instantly.
 </p>
 
-Malayalam system-wide transliteration for Windows.
-Type Manglish in English letters in ANY application and get Malayalam.
-Example: type `njaan` and get `ഞാന്‍`.
+<p align="center">
+  <a href="https://github.com/SynK-Soft/synk-free-apps/raw/refs/heads/main/Versions/1_0_0/Kanmani.exe"><b>⬇ Download Kanmani v1.0.0 for Windows (EXE)</b></a><br>
+  <sub>Free • Portable • No install • Windows 10 / 11</sub>
+</p>
 
-- Runs in background, no taskbar icon, lives only in the notification area (system tray).
-- Works in Word, Notepad, browsers, and any other application.
-- Temporary ON/OFF toggle via tray menu or `Ctrl+M`.
-- Kanmani scheme ported from `kanmani_offline.htm`.
+---
 
-Software: Kanmani
-Company: SynK
-Developer: Rakhesh Thayyur <rakheshthayyur@gmail.com> | +919846546124
+## What is this repo?
 
-## Files
+**SynK Free Apps** is where SynK publishes free, ready-to-use Windows tools.
 
-- `KanmaniApp.py` – main background application (global hook + tray + splash).
-- `kanmani.py` – Kanmani transliteration engine (converted rules, greedy longest match).
-- `kanmani_logo.py` – Kanmani logo embedded as base64 PNG (no external file at runtime).
-- `kanmani_offline.htm` – original offline reference page for the scheme.
-- `assets/kanmani-logo.svg` – original vector logo (design source).
-- `assets/kanmani-logo.png` / `assets/kanmani-logo.ico` – rendered logo, used for the EXE icon at build time.
-- `requirements.txt` – Python dependencies.
-- `build_exe.bat` – one-click EXE build script.
-- `.gitignore` – keeps Python/PyInstaller output (`build/`, `dist/`, `*.spec`, caches) out of git.
-- `dist\Kanmani.exe` – built portable executable (after build, git-ignored – rebuild with `build_exe.bat`).
-- `Versions\1_0_0\Kanmani.exe` – released v1.0.0 binary (committed, direct download link at the top).
+Right now this repo contains one app:
 
-## Use
+| App | What it does | Download |
+|-----|--------------|----------|
+| **Kanmani v1.0.0** | Type Manglish anywhere → get Malayalam | [Kanmani.exe](Versions/1_0_0/Kanmani.exe) |
 
-1. Run the app (see Run below). A splash screen shows the Kanmani logo,
-   name, version, company (SynK) and developer credits for ~2.6 seconds
-   (click or press any key to dismiss, `--no-splash` to skip).
-   Reopen it anytime: right-click tray icon → `About Kanmani`.
-   The About window stays open until you click on it.
-2. The shield logo icon appears in the notification area.
-3. Green dot = ON, grey dot = OFF.
-3. Type Manglish anywhere, for example:
-   - `njaan` → `ഞാന്‍`
-   - `kaNmaNi` → `കണ്മണി`
-   - `sakha` → `സഖ`
-4. Use Space, Enter, Tab, or punctuation (`. , ? !`) to finish a word.
-5. Use Backspace to correct inside the current word.
-6. Toggle temporarily:
-   - Right-click tray icon → Pause / Resume Malayalam, or
-   - Press `Ctrl+M` anywhere.
-7. Right-click tray icon → `Start with Windows` for autostart, `About Kanmani` for the info window, `Exit` to quit.
+> Just want Kanmani? Click the download link above and skip to [How to use](#-how-to-use-daily-use).
 
-Notes:
-- If the target app is run as Administrator, run Kanmani as Administrator too, otherwise Windows blocks the keyboard hook.
-- Keep your keyboard layout to English (US) while typing Manglish.
+---
 
-## How to run (source)
+## What is Kanmani?
 
-Requirements: Python 3.10+ on Windows.
+Kanmani lets you type Malayalam without a Malayalam keyboard.
+
+You keep your keyboard in English (US) and type phonetically (Manglish). Kanmani converts it live to Malayalam, in **Word, Notepad, WhatsApp Web, Chrome, Excel — any application**.
+
+No copy-paste. No switching windows. No special editor.
+
+Example:
+
+```
+You type:  njaan
+You get:   ഞാന്‍
+```
+
+It runs quietly in the background and lives only in the Windows system tray (bottom-right, near the clock).
+
+---
+
+## Who is it for?
+
+- Anyone who writes Malayalam on WhatsApp, email, Word, social media
+- Students, teachers, office staff, DTP / documentation work
+- People comfortable with Manglish but who want proper Malayalam output
+
+If you can type `namaskaram`, you can use Kanmani.
+
+---
+
+## Features
+
+- ✅ **Works everywhere** — system-wide, not just inside one app
+- ✅ **Portable** — single `.exe`, no installation, carry on USB
+- ✅ **Lightweight** — no taskbar window, only a small tray icon
+- ✅ **ON/OFF in one second** — tray menu or `Ctrl+M` anywhere
+- ✅ **Kanmani scheme** — classic, familiar Manglish mapping ported from `kanmani_offline.htm`
+- ✅ **Auto-start option** — start with Windows if you want
+- ✅ **Offline** — no internet needed, nothing is uploaded
+
+Tray status is simple:
+
+- 🟢 Green dot = Malayalam ON
+- ⚪ Grey dot = Malayalam OFF
+
+---
+
+## Try it — Samples
+
+Type the left side, Kanmani outputs the right side:
+
+| You type (Manglish) | You get (Malayalam) |
+|---------------------|---------------------|
+| `njaan` | ഞാന്‍ |
+| `kaNmaNi` | കണ്മണി |
+| `sakha` | സഖ |
+| `namaskaram` | നമസ്കാരം |
+| `kErALam` | കേരളം |
+| `malayaaLam` | മലയാളം |
+| `sneham` | സ്നേഹം |
+
+> Scheme is case-sensitive for some letters. Example: `N` / `n`, `S` / `s`, `L` / `l` give different Malayalam letters. If a word doesn't look right, try capitalizing one letter.
+
+Real sentence:
+
+```
+njaan naaLe varum -> ഞാന്‍ നാളെ വരും
+```
+
+---
+
+## ⬇ Download
+
+**Latest stable: v1.0.0**
+
+- [Download Kanmani v1.0.0 (Windows EXE)](https://github.com/SynK-Soft/synk-free-apps/raw/refs/heads/main/Versions/1_0_0/Kanmani.exe)
+- Or open the folder: [`Versions/1_0_0/Kanmani.exe`](Versions/1_0_0/Kanmani.exe)
+
+File details:
+
+- Size: ~single EXE, portable
+- Requires: Windows 10/11, no Python needed
+- No install, no admin needed (except see Note below)
+
+---
+
+## 🚀 Install (30 seconds)
+
+1. Download `Kanmani.exe` from the link above.
+2. Put it anywhere you like, e.g.:
+   ```
+   Documents\Kanmani\Kanmani.exe
+   ```
+   or on a USB stick for portable use.
+3. Double-click it.
+   - First you see a splash screen with the Kanmani logo (~2.6 sec, click to dismiss).
+   - Then a shield icon appears in the system tray (bottom-right, you may need to click `^` to see it).
+4. Done. Open Notepad and type `namaskaram` + `Space`.
+
+To keep it always available:
+
+- Right-click tray icon → tick **`Start with Windows`**.
+
+To remove:
+
+- Right-click tray icon → untick `Start with Windows` → `Exit` → delete the `.exe`. Nothing else is left behind.
+
+---
+
+## 🖱 How to use (daily use)
+
+1. Make sure the tray icon is **green (ON)**.
+2. Open any app — Notepad, Word, Chrome, WhatsApp.
+3. Keep your Windows keyboard on **English (US)**.
+4. Just type Manglish normally.
+
+Useful keys:
+
+- `Space`, `Enter`, `Tab`, `. , ? !` — **finish a word** (convert + lock it)
+- `Backspace` — correct inside the current unfinished word
+- `Ctrl+M` — **toggle Malayalam ON/OFF instantly**, from anywhere
+- Right-click tray icon:
+  - `Pause / Resume Malayalam`
+  - `Start with Windows`
+  - `About Kanmani`
+  - `Exit`
+
+Tips:
+
+- Want one English word in between? Press `Ctrl+M` → type English → `Ctrl+M` again. Takes <1 sec.
+- Clicking the mouse resets the current word — intentional, so formatting clicks don't corrupt text.
+- If the tray icon is grey, you're in English mode. Click it back to green.
+
+---
+
+## Requirements & Notes
+
+- Windows 10 / 11, 64-bit.
+- Keyboard layout must be **English (US)** while typing Manglish.
+- If your target app runs as **Administrator** (e.g., elevated Notepad), right-click `Kanmani.exe` → `Run as administrator`. Otherwise Windows blocks the keyboard hook.
+- Internet not required.
+
+---
+
+## ❓ FAQ
+
+**Does it work in Word / Excel / browsers / WhatsApp?**
+Yes. It's system-wide. If you can type English there, Kanmani can type Malayalam there.
+
+**Do I need to install Malayalam fonts?**
+Windows 10/11 already includes Malayalam fonts (Nirmala UI, etc.). No extra setup.
+
+**Is it free?**
+Yes. Download and use freely.
+
+**Does it upload my keystrokes?**
+No. Everything happens offline on your PC.
+
+**I see a grey dot, nothing converts. Why?**
+You're paused. Press `Ctrl+M` or right-click tray → Resume.
+
+**Backspace deletes the whole Malayalam word?**
+Backspace edits the current unfinished word. Once you press Space/Enter, the word is committed — use normal editing after that.
+
+**How do I update to a new version?**
+Download the new `Kanmani.exe` from `Versions/` and replace the old file. No uninstall needed.
+
+---
+
+## 📁 What's in this repo?
+
+```
+synk-free-apps/
+  assets/
+    kanmani-logo.png / .ico / .svg   <- logo files
+  Versions/
+    1_0_0/
+      Kanmani.exe                    <- download this
+  README.md
+```
+
+- Users only need `Versions/1_0_0/Kanmani.exe`.
+- `assets/` is just branding. Nothing needed at runtime.
+
+---
+
+## Version history
+
+- **v1.0.0** — First public release. Background transliteration, tray icon with ON/OFF, `Ctrl+M` toggle, splash + About window, Start-with-Windows, portable single EXE.
+
+Older / newer versions (when released) will appear under `Versions/`.
+
+---
+
+## Roadmap
+
+What we're thinking next (in plain language):
+
+- More typing styles + easy switcher
+- Malayalam word suggestions while typing
+- Convert selected text with a hotkey
+- Per-app ON/OFF (e.g., auto-pause in games)
+- Settings window + auto-update
+
+Have a request? Email us — see below.
+
+---
+
+## Support & Credits
+
+**Software:** Kanmani
+**Company:** SynK
+**Developer:** Rakhesh Thayyur
+**Email:** rakheshthayyur@gmail.com
+**Phone:** +919846546124
+
+Found a bug or want a feature? Email with:
+1. Windows version
+2. Kanmani version (`About Kanmani`)
+3. App you typed in + word you typed + what you expected
+
+---
+
+<details>
+<summary><b>For developers</b></summary>
+
+This repo (`synk-free-apps`) is the **distribution** repo — finished EXEs only.
+
+Source code, `requirements.txt`, and `build_exe.bat` live in the separate source repo. If you build from source:
 
 ```bat
 pip install -r requirements.txt
 pythonw KanmaniApp.py
 ```
 
-- Use `pythonw` to hide the console (background + tray only).
-- Use `python KanmaniApp.py` if you want to see console logs.
-- Single instance is enforced – if Kanmani is already running, a second start exits.
-
-Dependencies:
-- `keyboard` – global low-level keyboard hook and Unicode output.
-- `mouse` – reset current word on mouse click.
-- `pystray` + `Pillow` – notification-area icon.
-
-## How to build (EXE)
-
-One click:
+Build:
 
 ```bat
 build_exe.bat
 ```
 
-This runs:
-
-```bat
-pip install -r requirements.txt
-PyInstaller --noconfirm --onefile --noconsole --name Kanmani --icon "assets\kanmani-logo.ico" KanmaniApp.py
-```
-
-Output: `dist\Kanmani.exe`
-
-- `--noconsole` = no console window, no taskbar button, tray only.
-- `--onefile` = single portable EXE.
-- `--icon` = Kanmani logo as the EXE/taskbar icon.
-- The logo PNG is embedded in the code (`kanmani_logo.py`), so the EXE needs no external image files.
-
-## How to use as portable
-
-1. Build once (above) or copy `dist\Kanmani.exe` to any folder or USB stick.
-2. No installation needed. No admin needed except for elevated target apps (see above).
-3. Double-click `Kanmani.exe`:
-   - First run shows the tray icon immediately.
-   - No files are written except optional autostart registry entry (only if you enable `Start with Windows`).
-4. Carry the single `Kanmani.exe` file between PCs. Python is not required on the portable machine.
-5. To stop: tray icon → `Exit`.
-6. To remove autostart: tray icon → uncheck `Start with Windows`, or delete `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\Kanmani`.
-
-Portable layout example:
-
-```
-KanmaniPortable\
-  Kanmani.exe
-```
-
-Optional: keep `kanmani_offline.htm` alongside for scheme reference – not required at runtime (rules are embedded in the EXE via `kanmani.py`).
-
-## Planned features (Todo)
-
-### Typing & scheme
-- [ ] More schemes – InScript, Google-style Manglish variants, scheme switcher in tray menu
-- [ ] Smart word predictions / autocomplete dropdown while typing
-- [ ] Auto-correct common Manglish slips with an editable correction list
-- [ ] Numbers & date in Malayalam – convert digits and expand date-style input
-- [ ] Chillu output style toggle – traditional `ന്‍` (with ZWJ) vs modern `ൻ`
-
-### Control & UX
-- [ ] Per-app enable/disable – auto-pause in selected apps with an app list
-- [ ] Temporary English passthrough key – type one English word without toggling
-- [ ] On-screen language indicator – small floating `മ` badge near cursor showing ON/OFF
-- [ ] Custom hotkey setting – change `Ctrl+M` from a settings dialog
-- [ ] Typing sound feedback – subtle click on toggle or word commit (optional)
-
-### Productivity
-- [ ] Clipboard transliterate – hotkey to convert selected/clipboard Manglish to Malayalam in place
-- [ ] Typing statistics – words typed today, most-used words, stats window
-- [ ] Custom dictionary / shortcuts – user-defined expansions
-- [ ] Export typed text log – optional daily log file of transliterated output
-
-### System & distribution
-- [ ] Settings window – GUI for scheme, hotkey, autostart, theme, dictionary
-- [ ] Auto-update – check GitHub Releases for new versions with one-click update
-- [ ] Portable settings – keep config/dictionary next to EXE for USB carry
-- [ ] Malayalam font check – verify a Malayalam font exists on first run
-
-## Credits
-
-Software: Kanmani
-Company: SynK
-Developer: Rakhesh Thayyur
-Email: rakheshthayyur@gmail.com
-Phone: +919846546124
+</details>
