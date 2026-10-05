@@ -1,65 +1,119 @@
 # SynK Free Apps
 
-Free software from **SynK** (SynK-Soft), released as ready-to-run downloads for everyone.
-No sign-up, no ads, no tracking.
+Free Windows applications from **SynK**. Download the `.exe`, run it, done. No sign-up, no ads, no tracking.
 
-> Source code for these apps is maintained in private repositories.
-> This repository only hosts **binaries, release notes, checksums and support**.
+---
 
-## Apps
+## About SynK
 
-| App | What it does | Platform | Latest | Released | Download |
-|-----|--------------|----------|--------|----------|----------|
-| [**Kanmani**](apps/kanmani/README.md) | System-wide Malayalam transliteration (type Manglish, get Malayalam) in any Windows app | Windows 10/11 (64-bit) | **1.0.0** | 2026-10-05 | [Kanmani-1.0.0-win-x64.exe](https://github.com/SynK-Soft/synk-free-apps/releases/download/kanmani-v1.0.0/Kanmani-1.0.0-win-x64.exe) |
+**SynK** (SynK-Soft) builds software products and tools.
+This repository is where we share selected applications **free for the public**.
 
-<!-- ADD NEW APPS ABOVE THIS LINE. Keep one row per app, latest version only. -->
+| | |
+|---|---|
+| **Company** | SynK |
+| **Website** | *<add website>* |
+| **Support email** | *<add company email>* |
+| **GitHub** | [github.com/SynK-Soft](https://github.com/SynK-Soft) |
 
-Full version history for every app: see [Releases](../../releases) and each app's `CHANGELOG.md`.
+> Source code is kept in private repositories. This repository contains the ready-to-run applications only.
 
-## How to download and run
+---
 
-1. Open the **Download** link for the app (or go to [Releases](../../releases)).
-2. Save the `.exe` anywhere (a folder or USB stick). Apps are portable; no installer needed unless stated.
-3. (Recommended) Verify the download. See [Verify your download](#verify-your-download).
-4. Double-click to run.
+## Applications
 
-### Windows SmartScreen warning
-New, unsigned apps can show "Windows protected your PC". Click **More info → Run anyway**.
-Some antivirus tools may flag apps that use a global keyboard hook (such as Kanmani) as a false positive.
-Each release lists its SHA-256 checksum so you can confirm the file is exactly what we published.
+| App | Description | Platform | Latest | Released | Download |
+|-----|-------------|----------|--------|----------|----------|
+| [Kanmani](#kanmani) | System-wide Malayalam typing for Windows | Windows 10/11 (64-bit) | **1.0.0** | 2026-10-05 | [**Download**](Kanmani/1.0.0/Kanmani-1.0.0.exe) |
+
+<!-- Add new apps above this line -->
+
+---
+
+## Kanmani
+
+<img src="Kanmani/kanmani-logo.png" alt="Kanmani logo" width="96">
+
+**Malayalam system-wide transliteration for Windows.**
+Type Manglish in English letters in **any** application and get Malayalam. Example: type `njaan` and get **ഞാന്‍**.
+
+### Features
+- Works in Word, Notepad, browsers and any other Windows application.
+- Runs in the background with no taskbar button; lives in the notification area (system tray).
+- Turn ON/OFF with **Ctrl+M** or from the tray menu (green dot = ON, grey dot = OFF).
+- Optional **Start with Windows**.
+- Portable: a single `.exe`, no installation and no Python needed.
+
+### Downloads
+
+| Version | Date | File | Size | SHA-256 |
+|---------|------|------|------|---------|
+| **1.0.0** (latest) | 2026-10-05 | [Kanmani-1.0.0.exe](Kanmani/1.0.0/Kanmani-1.0.0.exe) | x.x MB | `PASTE_SHA256_HERE` |
+
+<!-- New Kanmani versions: add a row at the top of this table -->
+
+### How to use
+1. Download `Kanmani-1.0.0.exe` and double-click it. A splash screen appears and an icon is added to the system tray.
+2. Type Manglish anywhere:
+
+   | Type | Get |
+   |------|-----|
+   | `njaan` | ഞാന്‍ |
+   | `kaNmaNi` | കണ്മണി |
+   | `sakha` | സഖ |
+
+3. Press **Space, Enter, Tab** or punctuation (`. , ? !`) to finish a word. Use **Backspace** to correct inside the current word.
+4. Right-click the tray icon for Pause/Resume, Start with Windows, About and Exit.
+
+### Notes
+- If the app you type in runs **as Administrator**, run Kanmani as Administrator too, otherwise Windows blocks the keyboard hook.
+- Keep your keyboard layout on **English (US)** while typing Manglish.
+- To stop autostart, untick *Start with Windows* in the tray menu.
+
+### Version history
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0.0 | 2026-10-05 | First public release. Manglish to Malayalam transliteration, tray icon, Ctrl+M toggle, Start with Windows, splash/About window, portable single EXE. |
+
+### Credits
+Software: Kanmani · Company: SynK · Developer: Rakhesh Thayyur
+
+---
 
 ## Verify your download
 
-PowerShell:
+Compare the file's SHA-256 with the value in the table above (PowerShell):
 
 ```powershell
-Get-FileHash .\Kanmani-1.0.0-win-x64.exe -Algorithm SHA256
+Get-FileHash .\Kanmani-1.0.0.exe -Algorithm SHA256
 ```
 
-Compare the result with the checksum shown on the release page and in
-[`apps/kanmani/README.md`](apps/kanmani/README.md).
+### Windows SmartScreen / antivirus warning
+New apps can show "Windows protected your PC". Click **More info → Run anyway**.
+Apps that watch the keyboard (like Kanmani, to convert what you type) are sometimes flagged by antivirus as a false positive. The checksum above lets you confirm the file is exactly what we published.
+
+---
 
 ## Repository layout
 
 ```
-apps/<app-name>/        One folder per app: README, CHANGELOG, logo, screenshots, latest.json
-scripts/                Helper scripts for publishing releases
-docs/                   Internal publishing guide
-.github/                Issue templates
+synk-free-apps/
+├── README.md                     ← this file
+└── Kanmani/
+    ├── kanmani-logo.png
+    └── 1.0.0/
+        └── Kanmani-1.0.0.exe     ← one folder per version, never delete old ones
 ```
 
-Binaries are **not** committed to the repository. They are attached to
-[GitHub Releases](../../releases) with tags like `kanmani-v1.0.0`.
+## Support
 
-## Support and feedback
+Found a bug or have an idea? [Open an issue](../../issues) and mention the app name and version.
 
-- Bug or question: [open an issue](../../issues/new/choose) and pick the app's template.
-- Security problem: see [SECURITY.md](SECURITY.md).
-- Contact: *<add company support email>*
+## License
 
-## License and terms
-
-All applications are **freeware**: free to use, copy and share unmodified, for personal and commercial use.
-Reverse engineering, resale and modification are not permitted. See [LICENSE](LICENSE).
+Freeware: free to use and to share **unmodified**, for personal and commercial use.
+Modification, reverse engineering and resale are not permitted.
+The software is provided "as is", without warranty of any kind.
 
 © 2026 SynK. All rights reserved.
