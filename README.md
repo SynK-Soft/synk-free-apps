@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/kanmani-logo.png" alt="Kanmani logo" width="480">
+  <img src="assets/kanmani-logo.png" alt="Kanmani logo" width="100%">
 </p>
 
 <h1 align="center">Kanmani — Type Manglish, Get Malayalam Everywhere</h1>
