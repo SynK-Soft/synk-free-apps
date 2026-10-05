@@ -1,0 +1,8 @@
+# Never commit binaries; they go to GitHub Releases
+*.exe
+*.msi
+*.zip
+*.7z
+Thumbs.db
+.DS_Store
+dist-release/

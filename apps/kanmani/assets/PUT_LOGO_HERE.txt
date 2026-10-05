@@ -1,0 +1,1 @@
+Put kanmani-logo.png (from the private repo's assets folder) here, then delete this file.
